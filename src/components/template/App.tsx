@@ -1,27 +1,12 @@
-import * as React from "react";
-import {
-  Bell,
-  Plus,
-  Building2,
-  Users,
-  ClipboardList,
-  Calendar,
-  BarChart3,
-  Grid2X2,
-  LineChart,
-  FolderGit2,
-  Settings,
-  LogOut,
-} from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Bell, Settings, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { useAuthStore } from "@/store/authStore";
 import { useProfile } from "@/hooks/useAuth";
 import { navOptions } from "@/navOptions";
+import { Toaster } from "sonner";
 
 export default function App() {
   const { role, id } = useAuthStore();
@@ -41,8 +26,8 @@ export default function App() {
           </Link>
         </div>
 
-        <nav className="flex-1 px-4 space-y-2">
-          <ul>
+        <nav className="flex-1 px-4 ">
+          <ul className="space-y-2">
             {filteredOptionsNav.map((option) => (
               <li key={option.path}>
                 <NavLink
@@ -113,28 +98,40 @@ export default function App() {
           <Outlet />
         </main>
       </div>
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          classNames: {
+            error: "bg-red-400 text-white",
+            success: "bg-green-400 text-white",
+            warning: "text-yellow-400",
+            info: "bg-blue-400",
+            loading: "bg-blue-400 text-white",
+          },
+        }}
+      />
     </div>
   );
 }
 
-interface NavItemProps {
-  href: string;
-  icon: React.ElementType;
-  children: React.ReactNode;
-  active?: boolean;
-}
+// interface NavItemProps {
+//   href: string;
+//   icon: React.ElementType;
+//   children: React.ReactNode;
+//   active?: boolean;
+// }
 
-function NavItem({ href, icon: Icon, children, active }: NavItemProps) {
-  return (
-    <Link
-      to={href}
-      className={cn(
-        "flex items-center space-x-3 px-3 py-2 rounded-md transition-colors",
-        active ? "bg-secondary" : "hover:bg-secondary/50"
-      )}
-    >
-      <Icon className="w-5 h-5" />
-      <span>{children}</span>
-    </Link>
-  );
-}
+// function NavItem({ href, icon: Icon, children, active }: NavItemProps) {
+//   return (
+//     <Link
+//       to={href}
+//       className={cn(
+//         "flex items-center space-x-3 px-3 py-2 rounded-md transition-colors",
+//         active ? "bg-secondary" : "hover:bg-secondary/50"
+//       )}
+//     >
+//       <Icon className="w-5 h-5" />
+//       <span>{children}</span>
+//     </Link>
+//   );
+// }

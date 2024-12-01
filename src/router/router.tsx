@@ -1,5 +1,6 @@
-import { DashboardPage, ProfilePage } from "@/components/page";
+import { DashboardPage, ProductPage, ProfilePage } from "@/components/page";
 import LoginPage from "@/components/page/Login";
+import { EdithProductPage } from "@/components/page/product/EdithProduct";
 import App from "@/components/template/App";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -11,6 +12,14 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <DashboardPage />,
+      },
+      {
+        path: "product",
+        element: <ProductPage />,
+      },
+      {
+        path: "product/:id",
+        element: <EdithProductPage />,
       },
       {
         path: "profile",
