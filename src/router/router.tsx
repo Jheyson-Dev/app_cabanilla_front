@@ -9,6 +9,9 @@ import App from "@/components/template/App";
 import { createBrowserRouter } from "react-router-dom";
 import { EntryPage } from "@/components/entry/EntryList";
 import { UserPage } from "@/components/page/user/UserList";
+import { ExitPage } from "@/components/exit/ExitList";
+import { LoanPage } from "@/components/loan/LoanList";
+import { ReturnPage } from "@/components/return/ReturnList";
 
 export const router = createBrowserRouter([
   {
@@ -46,6 +49,18 @@ export const router = createBrowserRouter([
       {
         path: "entry",
         element: <EntryPage />,
+      },
+      {
+        path: "exit",
+        element: <ExitPage />,
+      },
+      {
+        path: "loan",
+        element: <LoanPage />,
+      },
+      {
+        path: "return",
+        element: <ReturnPage />,
       },
       {
         path: "profile",

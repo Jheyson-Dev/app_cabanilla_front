@@ -39,4 +39,22 @@ export const navOptions = [
     icon: LayoutDashboard,
     allowedRoles: ["ADMIN"],
   },
+  {
+    path: "/app/exit",
+    name: "Exit",
+    icon: LayoutDashboard,
+    allowedRoles: ["ADMIN"],
+  },
+  {
+    path: "/app/loan",
+    name: "Loan",
+    icon: LayoutDashboard,
+    allowedRoles: ["ADMIN"],
+  },
+  {
+    path: "/app/return",
+    name: "Return",
+    icon: LayoutDashboard,
+    allowedRoles: ["ADMIN"],
+  },
 ];
