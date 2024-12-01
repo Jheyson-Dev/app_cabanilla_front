@@ -21,4 +21,10 @@ export const navOptions = [
     icon: LayoutDashboard,
     allowedRoles: ["ADMIN"],
   },
+  {
+    path: "/app/office",
+    name: "Office",
+    icon: LayoutDashboard,
+    allowedRoles: ["ADMIN"],
+  },
 ];
