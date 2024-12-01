@@ -33,4 +33,10 @@ export const navOptions = [
     icon: LayoutDashboard,
     allowedRoles: ["ADMIN"],
   },
+  {
+    path: "/app/entry",
+    name: "Entry",
+    icon: LayoutDashboard,
+    allowedRoles: ["ADMIN"],
+  },
 ];
