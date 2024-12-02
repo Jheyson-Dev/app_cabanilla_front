@@ -46,7 +46,13 @@ import { Link } from "react-router-dom";
 import { CreateProduct, Product } from "@/types";
 // import { createProduct } from "@/service/product.service";
 import { Textarea } from "@/components/ui/textarea";
-import { CirclePlus, Pencil, Search, SlidersHorizontal } from "lucide-react";
+import {
+  CirclePlus,
+  Eye,
+  Pencil,
+  Search,
+  SlidersHorizontal,
+} from "lucide-react";
 // import { ProductDelete } from "./ProductDelete";
 
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -98,7 +104,7 @@ export const ProductManagment: FC<Props> = ({ data }) => {
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
-          {/* <TooltipProvider>
+          <TooltipProvider>
             <Tooltip>
               <TooltipTrigger
                 asChild
@@ -112,7 +118,7 @@ export const ProductManagment: FC<Props> = ({ data }) => {
                 <p>View</p>
               </TooltipContent>
             </Tooltip>
-          </TooltipProvider> */}
+          </TooltipProvider>
           {/* <ProductDelete id={row.row.original.id} /> */}
         </div>
       ),

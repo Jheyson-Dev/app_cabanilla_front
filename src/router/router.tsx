@@ -12,6 +12,7 @@ import { UserPage } from "@/components/page/user/UserList";
 import { ExitPage } from "@/components/exit/ExitList";
 import { LoanPage } from "@/components/loan/LoanList";
 import { ReturnPage } from "@/components/return/ReturnList";
+import { ProductDetails } from "@/components/page/product/ProducDetails";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
       {
         path: "product/:id",
         element: <EdithProductPage />,
+      },
+      {
+        path: "product/:id/details",
+        element: <ProductDetails />,
       },
       {
         path: "office",
