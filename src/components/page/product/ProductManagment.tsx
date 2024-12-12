@@ -86,7 +86,13 @@ export const ProductManagment: FC<Props> = ({ data }) => {
       footer: (info) => info.column.id,
     }),
     columnHelper.accessor(
-      (row) => row.OfficeProduct.map((product) => product.stock).join(", "),
+      (row) => {
+        const totalStock = row.OfficeProduct.reduce(
+          (acc, product) => acc + product.stock,
+          0
+        );
+        return totalStock;
+      },
       {
         id: "stock",
         header: () => <span>Stock</span>,
