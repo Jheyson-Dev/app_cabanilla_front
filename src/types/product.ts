@@ -20,6 +20,7 @@ interface OfficeProduct {
   Return: Return[];
   Office: Office;
   Product: Product;
+  stock: number;
 }
 
 export interface CreateProduct {

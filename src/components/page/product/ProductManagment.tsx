@@ -85,6 +85,15 @@ export const ProductManagment: FC<Props> = ({ data }) => {
       cell: (info) => info.getValue(),
       footer: (info) => info.column.id,
     }),
+    columnHelper.accessor(
+      (row) => row.OfficeProduct.map((product) => product.stock).join(", "),
+      {
+        id: "stock",
+        header: () => <span>Stock</span>,
+        cell: (info) => info.getValue(),
+        footer: (info) => info.column.id,
+      }
+    ),
     columnHelper.accessor("actions", {
       header: () => <span>Opciones</span>,
       cell: (row) => (
@@ -253,7 +262,7 @@ export const ProductManagment: FC<Props> = ({ data }) => {
                         {...register("name", { required: true })}
                       />
                       {errors.name && (
-                        <span className="text-red-600 text-xs">
+                        <span className="text-xs text-red-600">
                           El nombre del producto es requerido
                         </span>
                       )}
@@ -272,7 +281,7 @@ export const ProductManagment: FC<Props> = ({ data }) => {
                       {...register("description", { required: true })}
                     />
                     {errors.description && (
-                      <span className="text-red-600 text-xs">
+                      <span className="text-xs text-red-600">
                         Este campo es requerido
                       </span>
                     )}
